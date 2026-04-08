@@ -32,7 +32,12 @@ On startup, **`bind_latest_checkpoint_paths`** points each module at **`checkpoi
 | **`Agent/DistActCritAgent/agent.py`** | Distributional Bellman update, **episode replay** with frames, **`learn()`** unrolls the transformer on batches. |
 | **`Agent/sequence_utils.py`** | **`unroll_transformer_frames`**, masking helpers for padded sequences. |
 | **`Agent/episode_buffer.py`** | Padded episode batches (frames + timestep indices when using the transformer). |
+| **`Agent/buffer.py`** | **`ReplayBuffer`** (prioritized experience replay); used next to **`EpisodeReplayBuffer`**. |
+| **`device_utils.py`** | Torch device selection / naming helpers. |
+| **`Agent/Model/patch_encoder.py`** | Re-exports **`PatchEncoder`** / **`patchify_frames_hwc`** from **`VWMNET`**. |
 | **`OCDEnv.py`** | Environment. |
+
+Dependencies are listed in **`requirements.txt`** (`pip install -r requirements.txt`).
 
 ## Model architecture (detail)
 
@@ -49,8 +54,4 @@ See **`Agent/Model/ARCHITECTURE.md`**.
 
 ## Tests
 
-```bash
-python3 -m pytest test_sequence_mask_grad.py -v
-```
-
-Smoke tests for masked sequence gradients and padded timesteps.
+There is no `pytest` suite checked into this repository yet (the `test_sequence_mask_grad.py` smoke test mentioned in older notes is not present). Add tests under e.g. `tests/` and document the command here when they land.
