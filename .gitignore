@@ -1,0 +1,67 @@
+# --- Model weights & checkpoints ---
+# Default training output (extensionless torch.save files live here)
+checkpoints/
+
+# Extensionless saves used by this codebase (e.g. transformer10_td3, actor_planner0_td3)
+*_td3
+
+# Common serialized model / tensor formats
+*.pt
+*.pth
+*.pth.tar
+*.ckpt
+*.safetensors
+*.onnx
+*.pb
+*.h5
+*.hdf5
+*.joblib
+*.pickle
+*.pkl
+
+# --- Data & large binaries ---
+*.npy
+*.npz
+
+# Put datasets under these paths (ignored as directories)
+data/
+datasets/
+dataset/
+raw/
+downloads/
+
+# Tabular / columnar dumps
+*.parquet
+*.feather
+*.arrow
+
+# Common bulk archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# --- Experiment outputs (often large) ---
+wandb/
+mlruns/
+runs/
+logs/
+*.log
+lightning_logs/
+tensorboard/
+tb_logs/
+
+# --- Python environment (optional; keeps repo clean) ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.Python
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
